@@ -26,3 +26,7 @@ app.add_middleware(
 )
 
 app.include_router(authentication_router, prefix="/auth")
+
+@app.get("/health")
+def health():
+    return {"status": "good"}

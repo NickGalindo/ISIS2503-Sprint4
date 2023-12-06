@@ -22,3 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(encryption_router)
+
+@app.get("/health")
+def health():
+    return {"status": "good"}

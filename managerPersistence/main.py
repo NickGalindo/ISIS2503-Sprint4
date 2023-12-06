@@ -62,3 +62,7 @@ app.add_middleware(
 
 app.include_router(persistence_router, prefix="/persistence")
 app.include_router(cache_router, prefix="/cache")
+
+@app.get("/health")
+def health():
+    return {"status": "good"}
